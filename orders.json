@@ -1,0 +1,11 @@
+[
+  {
+    "model": "store.order",
+    "pk": 1,
+    "fields": {
+      "user": 2,
+      "total_price": "21.98",
+      "date": "2024-06-06T12:00:00Z"
+    }
+  }
+]

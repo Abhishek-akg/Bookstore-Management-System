@@ -1,0 +1,11 @@
+[
+  {
+    "model": "store.cartitem",
+    "pk": 1,
+    "fields": {
+      "cart": 1,
+      "book": 1,
+      "quantity": 2
+    }
+  }
+]

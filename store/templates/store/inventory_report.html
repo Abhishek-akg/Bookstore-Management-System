@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Inventory Report</title>
+</head>
+<body>
+    <h1>Inventory Report</h1>
+    <ul>
+        {% for book in books %}
+            <li>{{ book.title }} by {{ book.author }} - ${{ book.price }} ({{ book.quantity_in_stock }} in stock)</li>
+        {% endfor %}
+    </ul>
+</

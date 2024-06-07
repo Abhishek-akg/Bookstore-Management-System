@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Online Bookstore</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      h1 {
+        text-align: center;
+      }
+      .nav {
+        list-style-type: none;
+        padding: 0;
+        text-align: center;
+      }
+      .nav li {
+        display: inline;
+        margin: 0 10px;
+      }
+      .nav a {
+        text-decoration: none;
+        color: #007bff;
+      }
+      .nav a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to the Online Bookstore</h1>
+      <ul class="nav">
+        <li><a href="{% url 'browse_books' %}">Browse Books</a></li>
+        <li><a href="{% url 'view_cart' %}">View Cart</a></li>
+        <li><a href="{% url 'signup' %}">Sign Up</a></li>
+        <li><a href="{% url 'login' %}">Login</a></li>
+        {% if user.is_authenticated and user.is_admin %}
+        <li><a href="{% url 'manage_inventory' %}">Manage Inventory</a></li>
+        <li><a href="{% url 'inventory_report' %}">Inventory Report</a></li>
+        <li><a href="{% url 'sales_report' %}">Sales Report</a></li>
+        <li>
+          <a href="{% url 'user_activity_report' %}">User Activity Report</a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </body>
+</html>

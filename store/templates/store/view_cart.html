@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>View Cart</title>
+  </head>
+  <body>
+    <h1>Cart</h1>
+    <ul>
+      {% for item in cart.items.all %}
+      <li>
+        {{ item.book.title }} by {{ item.book.author }} - ${{ item.book.price }}
+        (Quantity: {{ item.quantity }})
+        <form method="post" action="{% url 'remove_from_cart' item.id %}">
+          {% csrf_token %}
+          <button type="submit">Remove</button>
+        </form>
+      </li>
+      {% endfor %}
+    </ul>
+    <p>Total Price: ${{ cart.total_price }}</p>
+    <form method="post" action="{% url 'checkout' %}">
+      {% csrf_token %}
+      <button type="submit">Proceed to Checkout</button>
+    </form>
+  </body>
+</html>

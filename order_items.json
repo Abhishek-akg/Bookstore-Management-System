@@ -1,0 +1,11 @@
+[
+  {
+    "model": "store.orderitem",
+    "pk": 1,
+    "fields": {
+      "order": 1,
+      "book": 1,
+      "quantity": 2
+    }
+  }
+]

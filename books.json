@@ -1,0 +1,22 @@
+[
+  {
+    "model": "store.book",
+    "pk": 1,
+    "fields": {
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "price": "10.99",
+      "quantity_in_stock": 100
+    }
+  },
+  {
+    "model": "store.book",
+    "pk": 2,
+    "fields": {
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "price": "7.99",
+      "quantity_in_stock": 200
+    }
+  }
+]

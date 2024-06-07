@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sales Report</title>
+  </head>
+  <body>
+    <h1>Sales Report</h1>
+    <ul>
+      {% for order in orders %}
+      <li>
+        Order ID: {{ order.id }} - Total: ${{ order.total_price }} - Date: {{
+        order.date }}
+        <ul>
+          {% for book in order.books.all %}
+          <li>{{ book.title }} by {{ book.author }} - ${{ book.price }}</li>
+          {% endfor %}
+        </ul>
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Checkout</title>
+  </head>
+  <body>
+    <h1>Checkout</h1>
+    <ul>
+      {% for book in cart.books.all %}
+      <li>{{ book.title }} by {{ book.author }} - ${{ book.price }}</li>
+      {% endfor %}
+    </ul>
+    <p>Total Price: ${{ cart.total_price }}</p>
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit">Confirm Purchase</button>
+    </form>
+  </body>
+</html>

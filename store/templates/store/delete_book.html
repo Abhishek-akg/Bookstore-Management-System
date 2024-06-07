@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Delete Book</title>
+  </head>
+  <body>
+    <h1>Delete Book</h1>
+    <p>
+      Are you sure you want to delete the book "{{ book.title }}" by {{
+      book.author }}?
+    </p>
+    <form method="post">
+      {% csrf_token %}
+      <button type="submit">Yes, Delete</button>
+    </form>
+    <a href="{% url 'manage_inventory' %}">Cancel</a>
+  </body>
+</html>
